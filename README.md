@@ -1,6 +1,5 @@
 # Kennect-assignment
 
-<<<<<<< HEAD
 
 # Get Prime Numbers with Database Design HLD & LLD
 
@@ -15,9 +14,6 @@
 [https://github.com/helloakshay27/Kennect-assignment/](https://github.com/helloakshay27/Kennect-assignment/)
 
 
-```
-
-
 ## :fire: Technologies and Libraries
 
 :point_right: Html <br />
@@ -29,19 +25,16 @@
 
 ## Screenshot
 
-![./src/screenshot/Screenshot1.png](./screenshot/Screenshot1.png)
+![./screenshot/Screenshot1.png](./screenshot/Screenshot1.png)
 
 
-![./src/screenshot/Screenshot2.png](./screenshot/Screenshot2.png)
+![./screenshot/Screenshot1.png](./screenshot/Screenshot2.png)
 
 
-![./src/screenshot/Screenshot3.png](./screenshot/Screenshot3.png)
+![./screenshot/Screenshot1.png](./screenshot/Screenshot3.png)
 
 
 
-#1 Get-Prime-Numbers
+## Get-Prime-Numbers
 
-#2 Database-Design-HLD-&-LLD
-=======
-https://kennect-assignment-8rgtxa0fv-akshays-projects-07fa9954.vercel.app/
->>>>>>> dcbc82095193d63cb74db30903bcb8aa138a2fe4
+## Database-Design-HLD-&-LLD
