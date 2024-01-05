@@ -1,5 +1,6 @@
 # Kennect-assignment
 
+<<<<<<< HEAD
 
 # Get Prime Numbers with Database Design HLD & LLD
 
@@ -41,3 +42,6 @@
 #1 Get-Prime-Numbers
 
 #2 Database-Design-HLD-&-LLD
+=======
+https://kennect-assignment-8rgtxa0fv-akshays-projects-07fa9954.vercel.app/
+>>>>>>> dcbc82095193d63cb74db30903bcb8aa138a2fe4
