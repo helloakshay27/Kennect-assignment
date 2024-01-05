@@ -29,14 +29,16 @@
 
 ![./screenshot/Screenshot1.png](./screenshot/Screenshot1.png)
 
-## Get Prime Number
+
+## UI-2
 
 ![./screenshot/Screenshot1.png](./screenshot/Screenshot2.png)
 
+
 ## HLD Database Design
 
-
 ![./screenshot/Screenshot1.png](./screenshot/Screenshot3.png)
+
 
 <<<<<<< HEAD
 ## Get-Prime-Numbers
