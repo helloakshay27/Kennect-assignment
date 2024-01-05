@@ -44,11 +44,5 @@
 ## Get-Prime-Numbers
 
 ## Database-Design-HLD-&-LLD
-=======
-#1Get-Prime-Numbers
 
-#2Database-Design-HLD-&-LLD
-=======
-https://kennect-assignment-8rgtxa0fv-akshays-projects-07fa9954.vercel.app/
->>>>>>> dcbc82095193d63cb74db30903bcb8aa138a2fe4
->>>>>>> 2925336cd5222a4ae0d937fffcf8d72aefc01b7a
+
