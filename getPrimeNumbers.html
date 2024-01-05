@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>getPrimesInRange</title>
+    <style>
+      body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+h1{
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+  
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+label, input, button {
+  margin: 10px;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>getPrimesInRange</h1>
+    <label for="start">Start Range:</label>
+    <input type="number" id="start" min="2" />
+    <label for="end">End Range:</label>
+    <input type="number" id="end" min="2" />
+    <button onclick="calculatePrimes()">Calculate</button>
+    <div id="results"></div>
+    <button onclick="showDetails()">Details</button>
+    <div id="details" class="hidden">
+      <div id="tab-1" class="tab-content">
+        <h2>Performance Metrics</h2>
+        <table id="performance-table">
+          <tr>
+            <th>Operation</th>
+            <th>Time (seconds)</th>
+          </tr>
+        </table>
+      </div>
+      <div id="tab-2" class="tab-content">
+        <h2>Individual Prime Checks</h2>
+        <table id="individual-prime-table">
+          <tr>
+            <th>Number</th>
+            <th>Result</th>
+            <th>Time (seconds)</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      // Function to check if a number is prime
+      function isPrime(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 === 0 || num % 3 === 0) return false;
+        for (let i = 5; i * i <= num; i += 6) {
+          if (num % i === 0 || num % (i + 2) === 0) return false;
+        }
+        return true;
+      }
+
+      // Function to clear previous results
+      function clearResults() {
+        document.getElementById("results").innerHTML = "";
+        document.getElementById("performance-table").innerHTML =
+          '<tr><th>Operation</th><th>Time (seconds)</th></tr>';
+        document.getElementById("individual-prime-table").innerHTML =
+          '<tr><th>Number</th><th>Result</th><th>Time (seconds)</th></tr>';
+      }
+
+      // Function to calculate primes in the given range
+      function calculatePrimes() {
+        clearResults();
+
+        const start = parseInt(document.getElementById("start").value);
+        const end = parseInt(document.getElementById("end").value);
+        const primes = [];
+
+        // Input Validation
+        if (isNaN(start) || isNaN(end) || start > end) {
+          alert("Please enter valid start and end ranges.");
+          return;
+        }
+
+        // Performance Metrics
+        const startTime = performance.now();
+
+        // Calculate prime numbers in the given range
+        for (let num = start; num <= end; num++) {
+          const primeCheckStart = performance.now();
+          const isPrimeResult = isPrime(num);
+          const primeCheckEnd = performance.now();
+          const timeForPrimeCheck = (primeCheckEnd - primeCheckStart) / 1000; // Convert to seconds
+
+          if (isPrimeResult) {
+            primes.push(num);
+          }
+
+          // Performance Metrics for Individual Prime Checks
+          const individualPrimeTable = document.getElementById(
+            "individual-prime-table"
+          );
+          const newRow = individualPrimeTable.insertRow(-1);
+          const cell1 = newRow.insertCell(0);
+          const cell2 = newRow.insertCell(1);
+          const cell3 = newRow.insertCell(2);
+          cell1.innerHTML = num;
+          cell2.innerHTML = isPrimeResult ? "Prime" : "Not Prime";
+          cell3.innerHTML = timeForPrimeCheck;
+        }
+
+        // Performance Metrics for Time to Run All Instances
+        const endTime = performance.now();
+        const totalTime = (endTime - startTime) / 1000; // Convert to seconds
+        const performanceTable = document.getElementById("performance-table");
+        const newRow = performanceTable.insertRow(-1);
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        cell1.innerHTML = "Time to Run All Instances";
+        cell2.innerHTML = totalTime;
+
+        // Display prime numbers in the results div
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = `<h2>Prime Numbers in Range (${start} to ${end})</h2>`;
+        resultsDiv.innerHTML += primes.join(", ");
+      }
+
+      // Function to show details
+      function showDetails() {
+        const detailsDiv = document.getElementById("details");
+        detailsDiv.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
