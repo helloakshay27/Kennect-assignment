@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-[https://kennect-assignment-8rgtxa0fv-akshays-projects-07fa9954.vercel.app/](https://kennect-assignment-8rgtxa0fv-akshays-projects-07fa9954.vercel.app/)
+[https://kennect-assignment-gy9n.vercel.app/](https://kennect-assignment-gy9n.vercel.app/)
 
 
 ## Github Link :- 
